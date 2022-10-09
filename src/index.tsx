@@ -1,11 +1,16 @@
 import '@/index.css'
 
-import React from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import React, { lazy } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Home from '@/pages/Home'
 import reportWebVitals from '@/reportWebVitals'
+
+import { STALE_TIME } from './shared/constants/queryOptions'
+
+const Home = lazy(() => import('@/pages/Home'))
 
 const router = createBrowserRouter([
   {
@@ -14,10 +19,24 @@ const router = createBrowserRouter([
   },
 ])
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+      staleTime: STALE_TIME,
+    },
+  },
+})
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )
 
