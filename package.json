@@ -69,13 +69,19 @@
   "devDependencies": {
     "@likelion-campus/eslint-config": "^0.0.1",
     "@likelion-campus/prettier-config": "^0.0.1",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "autoprefixer": "^10.4.12",
     "eslint": "^8.25.0",
     "husky": ">=6",
     "lint-staged": ">=10",
     "organize-imports-cli": "^0.10.0",
+    "postcss": "^8.4.17",
     "prettier": "^2.7.1",
     "react-app-rewire-alias": "^1.1.7",
-    "react-app-rewired": "^2.2.1"
+    "react-app-rewired": "^2.2.1",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss": "^3.1.8"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

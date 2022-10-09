@@ -9,3 +9,9 @@
 ```
 $ cp .npmrc.sample .npmrc
 ```
+
+## Stack
+
+- React 18
+- Typescript
+- Tailwind CSS
