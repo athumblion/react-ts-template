@@ -15,3 +15,4 @@ $ cp .npmrc.sample .npmrc
 - React 18
 - Typescript
 - Tailwind CSS
+- React-Router v6
